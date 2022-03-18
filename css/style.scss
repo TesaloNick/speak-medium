@@ -1,0 +1,364 @@
+@import url(./null.css);
+
+$main-color: #00b9b6;
+
+body {
+  font-family: "Inter";
+}
+
+.container {
+  max-width: 1120px;
+  margin: auto;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0 40px;
+    margin: 0;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+  }
+}
+
+.header {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+
+  @media (max-width: 375px) {
+    padding: 12px 0;
+  }
+
+  &__logo {
+    img {
+      width: 183px;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+
+      @media (max-width: 1200px) {
+        gap: 2.5vw;
+      }
+
+      li {
+        a {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 120%;
+          text-align: center;
+          color: #333333;
+        }
+      }
+    }
+  }
+
+  &__right-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__log-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 109px;
+    height: 44px;
+    background: linear-gradient(225deg, #00b9b6 0%, #00cdac 100%);
+    box-shadow: 0px 15px 30px rgba(220, 232, 243, 0.25);
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: #ffffff;
+  }
+
+  .dd-container {
+    width: 85px !important;
+
+    .dd-select {
+      width: 85px !important;
+      border: 0;
+      background: transparent !important;
+
+      .dd-selected {
+        height: 36px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .dd-selected-image {
+          width: 26px;
+          margin: 0;
+        }
+
+        .dd-selected-text {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 120%;
+          color: #333333;
+        }
+      }
+
+      .dd-pointer {
+        border: 0 !important;
+        width: 12px;
+        height: 12px;
+        background: url(../img/header/chevron.svg) no-repeat;
+        right: 5px;
+      }
+
+      .dd-pointer-up {
+        transform: rotate(180deg);
+      }
+    }
+
+    .dd-options {
+      width: 85px !important;
+      border: 0;
+
+      li {
+        .dd-option {
+          height: 36px;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          border: 0;
+
+          .dd-option-image {
+            width: 26px;
+            margin: 0;
+          }
+          .dd-option-text {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 120%;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main {
+  display: flex;
+  position: relative;
+  margin: 82px 0 0 0;
+  padding: 0 0 175px 0;
+
+  @media (max-width: 1200px) {
+    margin: 50px 0 0 0;
+    padding: 0 0 11vw 0;
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    margin: 30px 0 0 0;
+    padding: 0;
+    gap: 30px;
+  }
+
+  &__text {
+    z-index: 1;
+
+    @media (max-width: 650px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #00b9b6;
+    padding: 40px 0 0 0;
+
+    @media (max-width: 1200px) {
+      padding: 3vw 0 0 0;
+      font-size: 16px;
+    }
+
+    @media (max-width: 650px) {
+      padding: 0;
+    }
+
+    @media (max-width: 450px) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    color: #0e0e0f;
+    padding: 0 0 50px 0;
+
+    @media (max-width: 1200px) {
+      padding: 0 0 30px 0;
+    }
+
+    @media (max-width: 950px) {
+      font-size: 32px;
+      padding: 0 0 50px 0;
+    }
+
+    @media (max-width: 650px) {
+      text-align: center;
+      padding: 0 0 30px 0;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 350px) {
+      font-size: 24px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 196px;
+    height: 48px;
+    background: linear-gradient(225deg, #00b9b6 0%, #00cdac 100%);
+    box-shadow: 0px 15px 30px rgba(220, 232, 243, 0.25);
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    color: #ffffff;
+  }
+
+  &__image {
+    position: absolute;
+    left: 50%;
+    width: calc(50% + 40px);
+    overflow-x: hidden;
+
+    @media (max-width: 650px) {
+      position: relative;
+      left: 0;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    img {
+      width: 110%;
+
+      @media (max-width: 650px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 55% 40.7%;
+  justify-content: space-between;
+
+  &__video-block {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    // padding: 25px 0;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #0e0e0f;
+  }
+
+  &__content {
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    width: 139.03px;
+    height: 44px;
+    background: #2e3a59;
+    box-shadow: 0px 15px 30px rgba(220, 232, 243, 0.25);
+    border-radius: 8px;
+  }
+}
+
+.app-content {
+  display: grid;
+  grid-template-columns: 90px auto;
+  gap: 20px;
+
+  &__image {
+    grid-row: 1/3;
+    border-radius: 12px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 62px;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #00b9b6;
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333333;
+  }
+}
