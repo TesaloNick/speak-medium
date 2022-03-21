@@ -40,7 +40,7 @@ $('.workers__slider').slick({
   infinite: true,
   arrows: false,
   slidesToShow: 5,
-  slidesToScroll: 1,
+  // slidesToScroll: 1,
   dots: true,
   responsive: [
     {
