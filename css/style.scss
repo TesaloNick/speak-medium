@@ -21,6 +21,10 @@ body {
   }
 }
 
+.head {
+  background: url(../img/head-blur.png) center/100% 100% no-repeat;
+}
+
 .header {
   padding: 25px 0;
   display: flex;
@@ -38,6 +42,11 @@ body {
   &__logo {
     img {
       width: 183px;
+
+      @media (max-width: 768px) {
+        width: 91px;
+        display: none;
+      }
     }
   }
 
@@ -51,6 +60,10 @@ body {
         gap: 2.5vw;
       }
 
+      @media (max-width: 900px) {
+        display: none;
+      }
+
       li {
         a {
           font-style: normal;
@@ -59,6 +72,24 @@ body {
           line-height: 120%;
           text-align: center;
           color: #333333;
+          position: relative;
+          cursor: pointer;
+          text-decoration: none;
+
+          &::after {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #333333;
+            content: "";
+            transition: width 0.3s ease-out;
+          }
+          &:hover:after,
+          &:focus:after {
+            width: 100%;
+          }
         }
       }
     }
@@ -84,6 +115,15 @@ body {
     font-size: 16px;
     line-height: 120%;
     color: #ffffff;
+    transition: 0.5s;
+    border: solid 1px $main-color;
+    cursor: pointer;
+
+    &:hover {
+      background: #fff;
+      color: $main-color;
+      transition: 0.5s;
+    }
   }
 
   .dd-container {
@@ -253,6 +293,15 @@ body {
     font-size: 18px;
     line-height: 120%;
     color: #ffffff;
+    transition: 0.5s;
+    border: solid 1px $main-color;
+    cursor: pointer;
+
+    &:hover {
+      background: #fff;
+      color: $main-color;
+      transition: 0.5s;
+    }
   }
 
   &__image {
@@ -282,9 +331,32 @@ body {
   display: grid;
   grid-template-columns: 55% 40.7%;
   justify-content: space-between;
+  padding: 140px 0;
+
+  @media (max-width: 1200px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  @media (max-width: 450px) {
+    gap: 30px;
+  }
 
   &__video-block {
     width: 100%;
+
+    @media (max-width: 900px) {
+      width: 65%;
+      margin: auto;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     img {
       width: 100%;
@@ -294,8 +366,15 @@ body {
   &__text-block {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    // padding: 25px 0;
+    justify-content: space-evenly;
+
+    @media (max-width: 1000px) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: 900px) {
+      gap: 30px;
+    }
   }
 
   &__title {
@@ -304,13 +383,23 @@ body {
     font-size: 32px;
     line-height: 120%;
     color: #0e0e0f;
-  }
 
-  &__content {
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
   }
 
   &__buttons {
     display: flex;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
@@ -319,18 +408,30 @@ body {
     justify-content: center;
     align-items: center;
     padding: 8px 12px;
-    width: 139.03px;
+    max-width: 139.03px;
     height: 44px;
     background: #2e3a59;
     box-shadow: 0px 15px 30px rgba(220, 232, 243, 0.25);
     border-radius: 8px;
+    transition: 0.5s;
+    // border: solid 1px #2e3a59;
+    cursor: pointer;
+
+    &:hover {
+      background: #b3b3b3;
+      transition: 0.5s;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 }
 
 .app-content {
   display: grid;
   grid-template-columns: 90px auto;
-  gap: 20px;
+  gap: 5px 20px;
 
   &__image {
     grid-row: 1/3;
@@ -360,5 +461,164 @@ body {
     font-size: 16px;
     line-height: 140%;
     color: #333333;
+
+    @media (max-width: 420px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.workers {
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #0e0e0f;
+    text-align: center;
+    padding: 0 0 50px 0;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      padding: 0 0 30px 0;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 350px) {
+      font-size: 22px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 0 50px 0;
+
+    @media (max-width: 768px) {
+      padding: 0 0 30px 0;
+    }
+  }
+
+  &__button {
+    background: #ffffff;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 10px 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+    color: #333333;
+    transition: 0.5s;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: $main-color;
+      transition: 0.5s;
+    }
+
+    &:focus {
+      color: #ffffff;
+      background: linear-gradient(225deg, #00b9b6 0%, #00cdac 100%);
+      font-weight: 700;
+      transition: 0.5s;
+    }
+  }
+
+  &__slider {
+    .slick-track {
+      display: flex;
+    }
+
+    .slick-dots {
+      li {
+        width: 20px;
+        height: 6px;
+
+        button {
+          &::before {
+            width: 20px;
+            height: 6px;
+            background-color: rgba(0, 185, 182, 1);
+            border-radius: 3px;
+            content: "";
+          }
+        }
+      }
+      .slick-active {
+        width: 30px;
+        height: 6px;
+
+        button {
+          &::before {
+            width: 30px;
+            height: 6px;
+            background-color: $main-color;
+            border-radius: 3px;
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}
+
+.worker {
+  padding: 15px;
+  display: flex !important;
+  flex-direction: column;
+  gap: 15px;
+  height: auto !important;
+
+  &__photo {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    color: #333333;
+    flex: 1 1 auto;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__star {
+  }
+
+  &__arrow {
+    cursor: pointer;
   }
 }

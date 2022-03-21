@@ -35,3 +35,31 @@ $('#lan').ddslick({
   data: ddData,
   defaultSelectedIndex: 2,
 });
+
+$('.workers__slider').slick({
+  infinite: true,
+  arrows: false,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  dots: true,
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 4
+      }
+    },
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
