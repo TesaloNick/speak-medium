@@ -22,7 +22,7 @@ body {
 }
 
 .first-blur {
-  background: url(../img/first-blur.png) center/100% 100% no-repeat;
+  background: url(../img/blurs/first-blur.png) center/100% 100% no-repeat;
 }
 
 .header {
@@ -469,7 +469,7 @@ body {
 }
 
 .second-blur {
-  background: url(../img/second-blur.png) center/100% 100% no-repeat;
+  background: url(../img/blurs/second-blur.png) center/100% 100% no-repeat;
 }
 
 .workers {
@@ -836,7 +836,7 @@ body {
 }
 
 .third-blur {
-  background: url(../img/third-blur.png) center/100% 100% no-repeat;
+  background: url(../img/blurs/third-blur.png) center/100% 100% no-repeat;
 }
 
 .selection {
@@ -1166,6 +1166,296 @@ body {
 
     @media (max-width: 768px) {
       font-size: 16px;
+    }
+  }
+}
+
+.fourth-blur {
+  background: url(../img/blurs/fourth-blur.png) center/100% 100% no-repeat;
+}
+
+.order {
+  padding: 140px 0;
+
+  @media (max-width: 1024px) {
+    padding: 100px 0;
+  }
+
+  @media (max-width: 450px) {
+    padding: 80px 0;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    color: #0e0e0f;
+    text-align: center;
+    padding: 0 0 70px 0;
+
+    @media (max-width: 1024px) {
+      padding: 0 0 50px 0;
+      font-size: 32px;
+    }
+
+    @media (max-width: 900px) {
+      padding: 0 0 135px 0;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 24px;
+      padding: 0 0 95px 0;
+    }
+  }
+
+  &__steps {
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 212px;
+    height: 48px;
+    background: #f9fdff;
+    border: 1px solid #00b9b6;
+    box-shadow: 0px 15px 30px rgba(220, 232, 243, 0.25);
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    color: #00b9b6;
+    margin: auto;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      color: #f9fdff;
+      background: #00b9b6;
+      transition: 0.5s;
+    }
+  }
+}
+
+.steps {
+  position: relative;
+
+  &__picture-block {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 31%;
+
+    @media (max-width: 900px) {
+      position: relative;
+      left: 0;
+      transform: none;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content-block {
+    display: grid;
+    grid-template-columns: 32% 31% 32%;
+    justify-content: space-between;
+    height: 620px;
+
+    @media (max-width: 1200px) {
+      height: 50vw;
+    }
+
+    @media (max-width: 900px) {
+      height: auto;
+    }
+
+    .slick-dots {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      li {
+        width: 35px;
+        height: 35px;
+
+        // ::after {
+        //   content: "";
+        //   width: 20px;
+        //   height: 2px;
+        //   border-radius: 1px;
+        //   background: rgba(0, 185, 182, 1);
+        // }
+
+        button {
+          width: 35px;
+          height: 35px;
+
+          &::before {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 185, 182, 0.25);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // transform: translate(-50%);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 140%;
+            color: #00b9b6;
+            opacity: 1;
+            font-family: inherit;
+          }
+        }
+
+        :nth-of-type(1) {
+          button {
+            &::before {
+              content: "1";
+            }
+          }
+        }
+        :nth-of-type(2) {
+          button {
+            &::before {
+              content: "2";
+            }
+          }
+        }
+        :nth-of-type(1) {
+          button {
+            &::before {
+              content: "1";
+            }
+          }
+        }
+      }
+      .slick-active {
+        button {
+          &::before {
+            background: $main-color;
+            background: rgba(0, 185, 182, 0.75);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &__step {
+    padding: 0 0 0 45px;
+    margin: 45px 0 0 0;
+    position: relative;
+    transition: 0.5s;
+
+    @media (max-width: 1024px) {
+      margin: 20px 0 0 0;
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: -7px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(0, 185, 182, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      color: #00b9b6;
+
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    &:nth-of-type(1) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+
+      &::before {
+        content: "1";
+      }
+    }
+
+    &:nth-of-type(2) {
+      grid-column: 3/4;
+      grid-row: 1/2;
+
+      &::before {
+        content: "2";
+      }
+    }
+
+    &:nth-of-type(3) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+
+      &::before {
+        content: "3";
+      }
+    }
+
+    &:nth-of-type(4) {
+      grid-column: 3/4;
+      grid-row: 2/3;
+
+      &::before {
+        content: "4";
+      }
+    }
+
+    &:hover::before {
+      background: #00b9b6;
+      color: #fff;
+      transition: 0.5s;
+    }
+
+    h4 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 120%;
+      color: #0e0e0f;
+      padding: 0 0 10px 0;
+
+      @media (max-width: 900px) {
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      color: #0e0e0f;
+
+      @media (max-width: 900px) {
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
     }
   }
 }

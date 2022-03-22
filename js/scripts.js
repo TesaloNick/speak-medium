@@ -40,7 +40,6 @@ $('.workers__slider').slick({
   infinite: true,
   arrows: false,
   slidesToShow: 5,
-  // slidesToScroll: 1,
   dots: true,
   responsive: [
     {
@@ -63,3 +62,12 @@ $('.workers__slider').slick({
     }
   ]
 });
+
+if ($(window).width() <= 900) {
+  $('.steps__content-block').slick({
+    infinite: true,
+    arrows: false,
+    slidesToShow: 1,
+    dots: true,
+  });
+}
