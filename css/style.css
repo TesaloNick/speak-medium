@@ -1611,6 +1611,7 @@ body {
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   width: 31%;
+  min-width: 200px;
 }
 
 @media (max-width: 900px) {
@@ -1647,6 +1648,7 @@ body {
 @media (max-width: 900px) {
   .steps__content-block {
     height: auto;
+    margin: 0 !important;
   }
 }
 
@@ -1658,11 +1660,32 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .steps__content-block .slick-dots li {
   width: 35px;
   height: 35px;
+  position: relative;
+  margin: 0;
+}
+
+.steps__content-block .slick-dots li::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(0, 185, 182, 0.25);
+  position: absolute;
+  top: 50%;
+  right: -30px;
+}
+
+@media (max-width: 450px) {
+  .steps__content-block .slick-dots li::after {
+    width: 30px;
+    right: -35px;
+  }
 }
 
 .steps__content-block .slick-dots li button {
@@ -1693,21 +1716,30 @@ body {
   font-family: inherit;
 }
 
-.steps__content-block .slick-dots li :nth-of-type(1) button::before {
+.steps__content-block .slick-dots li:nth-of-type(1) button::before {
   content: "1";
 }
 
-.steps__content-block .slick-dots li :nth-of-type(2) button::before {
+.steps__content-block .slick-dots li:nth-of-type(2) button::before {
   content: "2";
 }
 
-.steps__content-block .slick-dots li :nth-of-type(1) button::before {
-  content: "1";
+.steps__content-block .slick-dots li:nth-of-type(3) button::before {
+  content: "3";
+}
+
+.steps__content-block .slick-dots li:nth-of-type(4)::after {
+  content: "";
+  display: none;
+}
+
+.steps__content-block .slick-dots li:nth-of-type(4) button::before {
+  content: "4";
 }
 
 .steps__content-block .slick-dots .slick-active button::before {
   background: #00b9b6;
-  background: rgba(0, 185, 182, 0.75);
+  background: #00b9b6;
   color: #fff;
 }
 
@@ -1722,6 +1754,13 @@ body {
 @media (max-width: 1024px) {
   .steps__step {
     margin: 20px 0 0 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .steps__step {
+    margin: 0;
+    padding: 0;
   }
 }
 

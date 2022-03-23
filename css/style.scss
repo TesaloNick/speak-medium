@@ -1251,6 +1251,7 @@ body {
     left: 50%;
     transform: translate(-50%);
     width: 31%;
+    min-width: 200px;
 
     @media (max-width: 900px) {
       position: relative;
@@ -1276,23 +1277,45 @@ body {
 
     @media (max-width: 900px) {
       height: auto;
+      margin: 0 !important;
     }
 
     .slick-dots {
       display: flex;
       gap: 40px;
       justify-content: center;
+      position: relative;
+      // top: calc(-160px - 50vw);
+
+      // @media (max-width: 730px) {
+      //   top: -530px;
+      // }
+
+      // @media (max-width: 450px) {
+      //   top: -570px;
+      // }
+
       li {
         width: 35px;
         height: 35px;
+        position: relative;
+        margin: 0;
 
-        // ::after {
-        //   content: "";
-        //   width: 20px;
-        //   height: 2px;
-        //   border-radius: 1px;
-        //   background: rgba(0, 185, 182, 1);
-        // }
+        &::after {
+          content: "";
+          width: 20px;
+          height: 2px;
+          border-radius: 1px;
+          background: rgba(0, 185, 182, 0.25);
+          position: absolute;
+          top: 50%;
+          right: -30px;
+
+          @media (max-width: 450px) {
+            width: 30px;
+            right: -35px;
+          }
+        }
 
         button {
           width: 35px;
@@ -1306,7 +1329,6 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            // transform: translate(-50%);
             font-style: normal;
             font-weight: 700;
             font-size: 20px;
@@ -1317,33 +1339,46 @@ body {
           }
         }
 
-        :nth-of-type(1) {
+        &:nth-of-type(1) {
           button {
             &::before {
               content: "1";
             }
           }
         }
-        :nth-of-type(2) {
+        &:nth-of-type(2) {
           button {
             &::before {
               content: "2";
             }
           }
         }
-        :nth-of-type(1) {
+        &:nth-of-type(3) {
           button {
             &::before {
-              content: "1";
+              content: "3";
+            }
+          }
+        }
+        &:nth-of-type(4) {
+          &::after {
+            content: "";
+            display: none;
+          }
+
+          button {
+            &::before {
+              content: "4";
             }
           }
         }
       }
+
       .slick-active {
         button {
           &::before {
             background: $main-color;
-            background: rgba(0, 185, 182, 0.75);
+            background: rgba(0, 185, 182, 1);
             color: #fff;
           }
         }
@@ -1359,6 +1394,11 @@ body {
 
     @media (max-width: 1024px) {
       margin: 20px 0 0 0;
+    }
+
+    @media (max-width: 900px) {
+      margin: 0;
+      padding: 0;
     }
 
     &::before {

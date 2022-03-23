@@ -70,4 +70,15 @@ if ($(window).width() <= 900) {
     slidesToShow: 1,
     dots: true,
   });
+
+  let paddingTopDots = 0;
+  paddingTopDots = document.querySelector(".order__steps").offsetHeight;
+  document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 50}px`;
+
+  if ($(window).width() <= 450) {
+    document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 30}px`;
+  };
 }
+
+
+
