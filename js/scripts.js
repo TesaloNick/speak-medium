@@ -80,6 +80,27 @@ if ($(window).width() <= 900) {
   };
 }
 
+$('.comments__slider').slick({
+  infinite: true,
+  arrows: false,
+  slidesToShow: 2,
+  dots: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+
 //------------------------------------------------------------------------------
 
 const arrowLeft = document.querySelector('.input__arrow-left');
