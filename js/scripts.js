@@ -80,5 +80,34 @@ if ($(window).width() <= 900) {
   };
 }
 
+//------------------------------------------------------------------------------
+
+const arrowLeft = document.querySelector('.input__arrow-left');
+const arrowRight = document.querySelector('.input__arrow-right');
+const number = document.querySelector('.sessions__input');
+const multiplyNumber = document.querySelector('.input__multiply-number');
+const sessionsForm = document.querySelector('.sessions__form');
+console.dir(multiplyNumber);
+
+arrowRight.addEventListener('click', () => {
+  number.value++
+  multiplyNumber.innerHTML = +number.value * 49;
+})
+
+arrowLeft.addEventListener('click', () => {
+  if (+number.value > 1) number.value--
+  multiplyNumber.innerHTML = +number.value * 49;
+})
+
+number.addEventListener('change', () => {
+  multiplyNumber.innerHTML = +number.value * 49;
+})
+
+sessionsForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  multiplyNumber.innerHTML = +number.value * 49;
+})
+
+//--------------------------------------------------------------------------------------------
 
 
