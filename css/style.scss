@@ -501,10 +501,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    padding: 0 0 50px 0;
+    // padding: 0 0 50px 0;
 
     @media (max-width: 768px) {
-      padding: 0 0 30px 0;
+      // padding: 0 0 30px 0;
     }
   }
 
@@ -546,6 +546,12 @@ body {
   &__slider {
     .slick-track {
       display: flex;
+      gap: 20px;
+      padding: 50px 0 35px;
+
+      @media (max-width: 768px) {
+        padding: 30px 0 35px;
+      }
     }
 
     .slick-dots {
@@ -582,6 +588,9 @@ body {
 }
 
 .worker {
+  background: #ffffff;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
   padding: 15px;
   display: flex !important;
   flex-direction: column;
@@ -1887,7 +1896,7 @@ body {
     font-size: 36px;
     line-height: 120%;
     color: #0e0e0f;
-    padding: 0 0 50px 0;
+    // padding: 0 0 50px 0;
 
     @media (max-width: 1024px) {
       font-size: 32px;
@@ -1905,13 +1914,25 @@ body {
   }
 
   &__slider {
+    position: relative;
+    left: calc((100% - 1120px) / 2);
+    width: calc(((100% - 1120px) / 2) + 1120px);
+    // width: 100vw;
+
     .slick-track {
       display: flex;
       gap: 20px;
+      padding: 50px 0;
+      z-index: 1;
+      // margin: 0 -15px;
+    }
+
+    .slick-slide {
     }
 
     .slick-dots {
-      bottom: -40px;
+      bottom: 0;
+
       li {
         width: 20px;
         height: 6px;
@@ -1952,6 +1973,7 @@ body {
   display: grid !important;
   grid-template-columns: auto auto;
   gap: 10px 20px;
+  width: 550px !important;
 
   @media (max-width: 900px) {
     grid-template-columns: 70px auto;
