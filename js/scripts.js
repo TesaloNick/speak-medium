@@ -83,19 +83,22 @@ if ($(window).width() <= 900) {
 $('.comments__slider').slick({
   infinite: true,
   arrows: false,
-  slidesToShow: 2,
+  slidesToShow: 3,
+  variableWidth: true,
   dots: true,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1200,
       settings: {
-        slidesToShow: 2
+        slidesToShow: 2,
+        variableWidth: false,
       }
     },
     {
-      breakpoint: 550,
+      breakpoint: 767,
       settings: {
-        slidesToShow: 1
+        slidesToShow: 1,
+        variableWidth: false,
       }
     }
   ]

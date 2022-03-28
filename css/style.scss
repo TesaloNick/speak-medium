@@ -10,8 +10,8 @@ body {
   max-width: 1120px;
   margin: auto;
 
-  @media (max-width: 1200px) {
-    width: 100%;
+  @media (max-width: 1234px) {
+    max-width: 100%;
     padding: 0 40px;
     margin: 0;
   }
@@ -1896,7 +1896,6 @@ body {
     font-size: 36px;
     line-height: 120%;
     color: #0e0e0f;
-    // padding: 0 0 50px 0;
 
     @media (max-width: 1024px) {
       font-size: 32px;
@@ -1917,21 +1916,39 @@ body {
     position: relative;
     left: calc((100% - 1120px) / 2);
     width: calc(((100% - 1120px) / 2) + 1120px);
-    // width: 100vw;
+
+    @media (max-width: 1200px) {
+      left: 40px;
+      width: calc((100% - 80px));
+    }
+
+    @media (max-width: 450px) {
+      left: 20px;
+    }
 
     .slick-track {
       display: flex;
       gap: 20px;
       padding: 50px 0;
       z-index: 1;
-      // margin: 0 -15px;
     }
 
     .slick-slide {
+      width: 550px;
+    }
+
+    .slick-current + .slick-slide ~ .slick-slide {
+      opacity: 0.5;
     }
 
     .slick-dots {
       bottom: 0;
+      position: relative;
+      left: calc((100% - 1120px) / -2);
+
+      @media (max-width: 1200px) {
+        left: 0;
+      }
 
       li {
         width: 20px;
@@ -1973,7 +1990,10 @@ body {
   display: grid !important;
   grid-template-columns: auto auto;
   gap: 10px 20px;
-  width: 550px !important;
+
+  @media (max-width: 1200px) {
+    width: auto;
+  }
 
   @media (max-width: 900px) {
     grid-template-columns: 70px auto;
