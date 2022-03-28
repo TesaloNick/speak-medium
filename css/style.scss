@@ -5,9 +5,9 @@ $main-color: #00b9b6;
 body {
   font-family: "Inter";
 }
-// .nonfooter {
-//   background-color: #e5e5e5;
-// }
+.nonfooter {
+  background-color: #f9fdff;
+}
 .container {
   max-width: 1120px;
   margin: auto;
@@ -2228,13 +2228,17 @@ body {
 
     li {
       &:nth-of-type(3) {
-        grid-column: 1/3;
-        grid-row: 3/4;
+        @media (max-width: 500px) {
+          grid-column: 1/3;
+          grid-row: 3/4;
+        }
       }
 
       &:nth-of-type(6) {
-        grid-column: 1/3;
-        grid-row: 4/5;
+        @media (max-width: 500px) {
+          grid-column: 1/3;
+          grid-row: 4/5;
+        }
       }
     }
   }
