@@ -43,19 +43,19 @@ $('.workers__slider').slick({
   dots: true,
   responsive: [
     {
-      breakpoint: 900,
+      breakpoint: 950,
       settings: {
         slidesToShow: 4
       }
     },
     {
-      breakpoint: 700,
+      breakpoint: 800,
       settings: {
         slidesToShow: 3
       }
     },
     {
-      breakpoint: 550,
+      breakpoint: 615,
       settings: {
         slidesToShow: 1
       }
@@ -158,10 +158,29 @@ $(function () {
 
 //--------------------------------------------------------------------------------------------
 
-$(function () {
+function appearup(classStart, classAppear) {
+  var show = true;
+
   $(window).scroll(function () {
-    var distanceTop = $('.help__title').offset().top;
-    console.log(distanceTop, $(window).scrollTop() + window.innerHeight);
-    if ($(window).scrollTop() + window.innerHeight > distanceTop) $('.help').addClass('animate');
+    var distanceTop = $(classStart).offset().top;
+    if (show && ($(window).scrollTop() + window.innerHeight > distanceTop)) {
+      show = false;
+      $(classAppear).addClass('animate');
+    }
   });
+}
+
+$(function () {
+  appearup(".help__title", ".help");
+  appearup(".second-video-block", ".second-app");
+  appearup(".workers", ".workers");
+  appearup(".advantages", ".advantages");
+  appearup(".selection__title", ".selection");
+  appearup(".about-service", ".about-service");
+  appearup(".sets", ".sets");
+  appearup(".order__title", ".order");
+  appearup(".comments", ".comments");
+  appearup(".service__title", ".service");
+  appearup(".child-help__title", ".child-help");
+  appearup(".footer__left-block", ".footer");
 });
