@@ -105,7 +105,7 @@ body {
   position: absolute;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 1px;
   background-color: #333333;
   content: "";
   -webkit-transition: width 0.3s ease-out;
@@ -154,7 +154,7 @@ body {
 }
 
 .header__log-in:hover {
-  background: #fff;
+  background: transparent;
   color: #00b9b6;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -237,6 +237,35 @@ body {
   font-size: 18px;
   line-height: 120%;
   color: #333333;
+}
+
+.animate {
+  position: relative;
+  -webkit-animation: showLeft 1s ease-in-out;
+          animation: showLeft 1s ease-in-out;
+  z-index: 1;
+}
+
+@-webkit-keyframes showLeft {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes showLeft {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .main {
@@ -383,7 +412,7 @@ body {
 }
 
 .main__button:hover {
-  background: #fff;
+  background: transparent;
   color: #00b9b6;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -2127,7 +2156,7 @@ body {
   }
 }
 
-.service__price span {
+.service__per-time {
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -2135,7 +2164,7 @@ body {
 }
 
 @media (max-width: 1023px) {
-  .service__price span {
+  .service__per-time {
     font-size: 18px;
   }
 }
@@ -2763,11 +2792,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   justify-items: start;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 120%;
-  color: #333333;
 }
 
 @media (max-width: 500px) {
@@ -2797,6 +2821,33 @@ body {
     -ms-grid-row-span: 1;
     grid-row: 4/5;
   }
+}
+
+.footer__menu li a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  color: #333333;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer__menu li a::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #333333;
+  content: "";
+  -webkit-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
+}
+
+.footer__menu li a:hover:after, .footer__menu li a:focus:after {
+  width: 100%;
 }
 
 .footer__right-block {

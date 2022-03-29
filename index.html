@@ -14,6 +14,10 @@
 </head>
 
 <body>
+  <!-- <p>
+    <span class="count">10</span>
+    <span class="count2">100</span>%
+  </p> -->
   <div class="nonfooter">
     <div class="first-blur">
       <div class="container">
@@ -241,15 +245,15 @@
             <div class="about-service__video-block"><img src="./img/about-service/service-video.png" alt=""></div>
             <ul class="about-service__list">
               <li class="about-service__item">
-                <div class="about-service__number">900 +</div>
+                <div class="about-service__number"><span class="count">900</span> +</div>
                 <div class="about-service__description">регистраций вчера</div>
               </li>
               <li class="about-service__item">
-                <div class="about-service__number">75 000 +</div>
+                <div class="about-service__number"><span class="count">75000</span> +</div>
                 <div class="about-service__description">проведено сессий</div>
               </li>
               <li class="about-service__item">
-                <div class="about-service__number">354 +</div>
+                <div class="about-service__number"><span class="count">354</span> +</div>
                 <div class="about-service__description">психологов</div>
               </li>
             </ul>
@@ -307,7 +311,9 @@
             <div class="service__chat-block chat">
               <div>
                 <h4 class="chat__title service__subtitle">24 часа чата</h4>
-                <p class="chat__price service__price">4200₽ <span>/ 24 часа</span></p>
+                <p class="chat__price service__price"><span class="count2">4200</span> ₽ <span
+                    class="service__per-time">/
+                    24 часа</span></p>
               </div>
               <ul class="chat__list service__list">
                 <li>24 часа доступа к чату с психологом</li>
@@ -324,7 +330,8 @@
               </div>
               <div>
                 <h4 class="sessions__title service__subtitle">Аудио/Видео сессии</h4>
-                <p class="sessions__price service__price">49 ₽ <span>/ 1 минута</span></p>
+                <p class="sessions__price service__price"><span class="count2">49</span> ₽ <span
+                    class="service__per-time">/ 1 минута</span></p>
               </div>
               <ul class="sessions__list service__list">
                 <li>Безлимитный доступа к чату с психологом до начала сессии</li>
@@ -527,12 +534,12 @@
         <div class="footer__left-block">
           <div class="footer__logo"><img src="./img/footer/logo.svg" alt=""></div>
           <ul class="footer__menu">
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Privacy Policy</li>
-            <li>About us</li>
-            <li>Contact</li>
-            <li>Terms and Conditions</li>
+            <li><a href=''>Home</a></li>
+            <li><a href=''>Blog</a></li>
+            <li><a href=''>Privacy Policy</a></li>
+            <li><a href=''>About us</a></li>
+            <li><a href=''>Contact</a></li>
+            <li><a href=''>Terms and Conditions</a></li>
           </ul>
         </div>
         <div class="footer__right-block">
@@ -551,7 +558,12 @@
     </div>
   </div>
 
+
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/jquery-spincrement-master/jquery.spincrement.js"></script>
   <script src="./js/slick/slick.min.js"></script>
   <script src="./js/jquery.ddslick.min.js"></script>
 </body>

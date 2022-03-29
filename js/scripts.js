@@ -111,7 +111,6 @@ const arrowRight = document.querySelector('.input__arrow-right');
 const number = document.querySelector('.sessions__input');
 const multiplyNumber = document.querySelector('.input__multiply-number');
 const sessionsForm = document.querySelector('.sessions__form');
-console.dir(multiplyNumber);
 
 arrowRight.addEventListener('click', () => {
   number.value++
@@ -134,4 +133,35 @@ sessionsForm.addEventListener('submit', (e) => {
 
 //--------------------------------------------------------------------------------------------
 
+function countup(className) {
+  var countBlockTop = $("." + className).offset().top;
+  var windowHeight = window.innerHeight;
+  var show = true;
 
+  $(window).scroll(function () {
+    if (show && (countBlockTop < $(window).scrollTop() + windowHeight)) {
+      show = false;
+
+      $('.' + className).spincrement({
+        from: 1,
+        duration: 4000,
+      });
+    }
+  })
+}
+
+$(function () {
+  countup("count", $(".count").text());
+  countup("count2", $(".count2").text());
+  countup("count3", $(".count3").text());
+});
+
+//--------------------------------------------------------------------------------------------
+
+$(function () {
+  $(window).scroll(function () {
+    var distanceTop = $('.help__title').offset().top;
+    console.log(distanceTop, $(window).scrollTop() + window.innerHeight);
+    if ($(window).scrollTop() + window.innerHeight > distanceTop) $('.help').addClass('animate');
+  });
+});
