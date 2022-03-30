@@ -196,8 +196,24 @@ $(function () {
   })
 });
 
-$(function () {
-  $('.main__button').click(() => {
+//------------------------------pop-up-------------------------
+
+function popUp(button) {
+  $(`.${button}`).click(() => {
     $('.pop-up').toggleClass('active')
   })
+}
+
+$(function () {
+  $('form').submit((event) => {
+    event.preventDefault();
+    // document.querySelectorAll('input').forEach(item => item.value = '')
+
+  })
+  popUp('pop-up__container')
+  popUp('main__button')
+  popUp('pop-up__close')
+  popUp('order__button')
+  popUp('service__button')
+  popUp('pop-up__button')
 });

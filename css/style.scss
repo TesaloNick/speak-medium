@@ -20,30 +20,48 @@ body {
 }
 
 .pop-up {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: grey;
-  display: none;
+  background-color: rgba(74%, 74%, 74%, 0.75);
   z-index: 15;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   &__block {
     width: 50%;
-    padding: 30px;
-    margin: auto;
+    padding: 90px 30px 30px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
+    border-radius: 10px;
+    cursor: auto;
+    z-index: 17;
+
+    @media (max-width: 650px) {
+      width: 90%;
+    }
   }
 
   &__close {
     width: 30px;
     height: 30px;
-    position: relative;
+    position: absolute;
+    right: 30px;
+    top: 30px;
     cursor: pointer;
 
     span {
@@ -84,26 +102,32 @@ body {
     padding: 10px;
     width: 100%;
     border: #333333 1px solid;
-  }
-
-  &__name {
-  }
-
-  &__phone {
+    border-radius: 5px;
   }
 
   &__button {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 20px;
     line-height: 140%;
-    color: #333333;
+    border: #00b9b6 1px solid;
+    color: #fff;
     padding: 10px;
     width: 100%;
+    border-radius: 5px;
+    background-color: $main-color;
+    transition: 0.5s;
+
+    &:hover {
+      color: #00b9b6;
+      background-color: transparent;
+      transition: 0.5s;
+    }
   }
 
   &.active {
-    display: block;
+    top: -100%;
+    transition: 1s ease-in-out;
   }
 }
 
@@ -1542,7 +1566,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    width: 176px;
+    width: 31%;
 
     @media (max-width: 900px) {
       display: none;
@@ -1550,6 +1574,7 @@ body {
       left: 0;
       transform: none;
       margin: auto;
+      width: 176px;
     }
 
     img {
