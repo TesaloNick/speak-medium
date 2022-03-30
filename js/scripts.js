@@ -1,3 +1,4 @@
+//--------------------слайдеры-------------------------
 var ddData = [
   {
     text: "EN",
@@ -71,13 +72,13 @@ if ($(window).width() <= 900) {
     dots: true,
   });
 
-  let paddingTopDots = 0;
-  paddingTopDots = document.querySelector(".order__steps").offsetHeight;
-  document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 50}px`;
+  // let paddingTopDots = 0;
+  // paddingTopDots = document.querySelector(".order__steps").offsetHeight;
+  // document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 50}px`;
 
-  if ($(window).width() <= 450) {
-    document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 30}px`;
-  };
+  // if ($(window).width() <= 450) {
+  //   document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 30}px`;
+  // };
 }
 
 $('.comments__slider').slick({
@@ -104,7 +105,7 @@ $('.comments__slider').slick({
   ]
 });
 
-//------------------------------------------------------------------------------
+//--------------------определение цены-------------------------
 
 const arrowLeft = document.querySelector('.input__arrow-left');
 const arrowRight = document.querySelector('.input__arrow-right');
@@ -131,7 +132,7 @@ sessionsForm.addEventListener('submit', (e) => {
   multiplyNumber.innerHTML = +number.value * 49;
 })
 
-//--------------------------------------------------------------------------------------------
+//-----------------------возрастающие числа------------------------------
 
 function countup(className) {
   var countBlockTop = $("." + className).offset().top;
@@ -156,7 +157,7 @@ $(function () {
   countup("count3", $(".count3").text());
 });
 
-//--------------------------------------------------------------------------------------------
+//------------------------------всплывающие блоки-------------------------
 
 function appearup(classStart, classAppear) {
   var show = true;
@@ -183,4 +184,20 @@ $(function () {
   appearup(".service__title", ".service");
   appearup(".child-help__title", ".child-help");
   appearup(".footer__left-block", ".footer");
+});
+
+//------------------------------меню-------------------------
+
+$(function () {
+  $('.header__burger-menu').click(() => {
+    $('.header__burger-menu').toggleClass('active-menu')
+    $('.header__nav').toggleClass('active-menu')
+    $('.open-menu-scroll').toggleClass('active-menu')
+  })
+});
+
+$(function () {
+  $('.main__button').click(() => {
+    $('.pop-up').toggleClass('active')
+  })
 });
