@@ -21,7 +21,7 @@ body {
 
 .pop-up {
   position: fixed;
-  top: 0;
+  top: -100%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -63,6 +63,12 @@ body {
     right: 30px;
     top: 30px;
     cursor: pointer;
+    transition: .5s;
+
+    &:hover{
+      transform: scale(1.2);
+      transition: .5s;
+    }
 
     span {
       width: 30px;
@@ -126,7 +132,7 @@ body {
   }
 
   &.active {
-    top: -100%;
+    top: 0;
     transition: 1s ease-in-out;
   }
 }
