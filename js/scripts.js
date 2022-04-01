@@ -106,7 +106,7 @@ $('.comments__slider').slick({
 });
 
 //--------------------определение цены-------------------------
-
+//dfs
 const arrowLeft = document.querySelector('.input__arrow-left');
 const arrowRight = document.querySelector('.input__arrow-right');
 const number = document.querySelector('.sessions__input');
