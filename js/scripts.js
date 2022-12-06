@@ -1,4 +1,3 @@
-//--------------------слайдеры-------------------------
 var ddData = [
   {
     text: "EN",
@@ -23,14 +22,10 @@ var ddData = [
     value: 4,
     selected: false,
     imageSrc: "../img/header/flags/by.svg"
-  },
-  {
-    text: "IS",
-    value: 5,
-    selected: false,
-    imageSrc: "../img/header/flags/yiddish.svg"
   }
 ];
+
+//--------------------слайдеры-------------------------
 
 $('#lan').ddslick({
   data: ddData,
@@ -41,6 +36,7 @@ $('.workers__slider').slick({
   infinite: true,
   arrows: false,
   slidesToShow: 5,
+  swipeToSlide: true,
   dots: true,
   responsive: [
     {
@@ -68,17 +64,10 @@ if ($(window).width() <= 900) {
   $('.steps__content-block').slick({
     infinite: true,
     arrows: false,
+    swipeToSlide: true,
     slidesToShow: 1,
     dots: true,
   });
-
-  // let paddingTopDots = 0;
-  // paddingTopDots = document.querySelector(".order__steps").offsetHeight;
-  // document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 50}px`;
-
-  // if ($(window).width() <= 450) {
-  //   document.querySelector('.steps__content-block .slick-dots').style = `top: -${paddingTopDots + 30}px`;
-  // };
 }
 
 $('.comments__slider').slick({
@@ -106,7 +95,7 @@ $('.comments__slider').slick({
 });
 
 //--------------------определение цены-------------------------
-//dfs
+
 const arrowLeft = document.querySelector('.input__arrow-left');
 const arrowRight = document.querySelector('.input__arrow-right');
 const number = document.querySelector('.sessions__input');
@@ -154,7 +143,6 @@ function countup(className) {
 $(function () {
   countup("count", $(".count").text());
   countup("count2", $(".count2").text());
-  countup("count3", $(".count3").text());
 });
 
 //------------------------------всплывающие блоки-------------------------
@@ -211,7 +199,6 @@ function popUp(button) {
 $(function () {
   $('form').submit((event) => {
     event.preventDefault();
-    // document.querySelectorAll('input').forEach(item => item.value = '')
 
   })
   popUp('pop-up__container')
@@ -256,3 +243,9 @@ function slowScroll(id) {
 
   return false;
 }
+
+const linksWorkers = document.querySelectorAll('.workers__button')
+linksWorkers.forEach(item => {
+  item.addEventListener('click', (e) => e.preventDefault())
+})
+
